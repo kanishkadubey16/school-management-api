@@ -1,20 +1,18 @@
----
-
 # Live API Endpoints
 
 ## GET - List Schools
 
 Returns schools sorted by proximity to the user's location.
 
-Endpoint:
+### Endpoint
 
 https://school-management-api-fvdq.onrender.com/listSchools?latitude=28.61&longitude=77.20
 
-Method:
+### Method
 
 GET
 
-Example Response:
+### Example Response
 
 ```json
 [
@@ -35,15 +33,15 @@ Example Response:
 
 Adds a new school to the database.
 
-Endpoint:
+### Endpoint
 
 https://school-management-api-fvdq.onrender.com/addSchool
 
-Method:
+### Method
 
 POST
 
-Example Request Body:
+### Example Request Body
 
 ```json
 {
@@ -54,7 +52,7 @@ Example Request Body:
 }
 ```
 
-Example Response:
+### Example Response
 
 ```json
 {
@@ -67,6 +65,5 @@ Example Response:
 
 # Deployment
 
-Backend deployed on Render.
-
-Database hosted on Aiven MySQL.
+- Backend deployed on Render
+- Database hosted on Aiven MySQL
