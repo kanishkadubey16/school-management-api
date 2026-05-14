@@ -1,57 +1,72 @@
-# School Management API
+---
 
-A RESTful API built using Node.js, Express.js, and MySQL for managing school data.
+# Live API Endpoints
 
-The project allows users to:
+## GET - List Schools
 
-- Add new schools to the database
-- Fetch schools sorted by proximity to a user’s location
+Returns schools sorted by proximity to the user's location.
+
+Endpoint:
+
+https://school-management-api-fvdq.onrender.com/listSchools?latitude=28.61&longitude=77.20
+
+Method:
+
+GET
+
+Example Response:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Delhi Public School",
+    "address": "Delhi",
+    "latitude": 28.7041,
+    "longitude": 77.1025,
+    "distance": "14.14 km"
+  }
+]
+```
 
 ---
 
-# Features
+## POST - Add School
 
-- Add schools with validation
-- Fetch schools sorted by nearest distance
-- MySQL database integration
-- REST API architecture
-- Error handling middleware
-- Distance calculation using Haversine Formula
-- Environment variable configuration using dotenv
+Adds a new school to the database.
+
+Endpoint:
+
+https://school-management-api-fvdq.onrender.com/addSchool
+
+Method:
+
+POST
+
+Example Request Body:
+
+```json
+{
+  "name": "Modern School",
+  "address": "Sonipat",
+  "latitude": 28.99,
+  "longitude": 77.01
+}
+```
+
+Example Response:
+
+```json
+{
+  "message": "School added successfully",
+  "schoolId": 2
+}
+```
 
 ---
 
-# Tech Stack
+# Deployment
 
-- Node.js
-- Express.js
-- MySQL
-- mysql2
-- dotenv
-- cors
-- nodemon
+Backend deployed on Render.
 
----
-
-# Folder Structure
-
-```bash
-school-management-api/
-│
-├── config/
-│   └── db.js
-│
-├── controllers/
-│   └── schoolController.js
-│
-├── routes/
-│   └── schoolRoutes.js
-│
-├── utils/
-│   └── distance.js
-│
-├── .env
-├── .gitignore
-├── package.json
-├── server.js
-└── README.md
+Database hosted on Aiven MySQL.
